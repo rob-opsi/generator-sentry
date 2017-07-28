@@ -4,6 +4,6 @@ import {storiesOf} from '@storybook/react';
 
 import <%= name %> from 'sentry-ui/<%= fileName %>';
 
-storiesOf('<%= name %>').addWithInfo('default', '', () => (
+storiesOf('<%= name %>', module).withInfo('default', '', () => (
   <<%= name %> />
 ));
