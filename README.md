@@ -1,4 +1,4 @@
-# generator-sentry [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# generator-sentry [![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > Generate a sentry UI component
 
 ## Installation
@@ -10,22 +10,22 @@ npm install -g yo
 npm install -g generator-sentry
 ```
 
-Then generate your new project:
+When inside of your sentry development directory, you can generate your new react component (and jest test, and storybook doc):
 
 ```bash
-yo sentry
+yo sentry:component ComponentName
 ```
 
-## Getting To Know Yeoman
+By default this creates a new React class using `createClass`.
+You can also generate a `es6` or `pure` component by using the `--type` option.
 
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
+```bash
+yo sentry:component ComponentName --type es6
+```
 
 ## License
 
-BSD-3-Clause © [Billy Vong]()
+BSD-3-Clause © [Sentry]()
 
 
 [npm-image]: https://badge.fury.io/js/generator-sentry.svg
