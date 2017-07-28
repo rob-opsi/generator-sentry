@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Billy Vong",
+      "authorEmail": "billy@sentry.io",
+      "authorUrl": ""
+    }
+  }
+}
