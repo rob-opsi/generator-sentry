@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react';
 import classNames from 'classnames';
+import '<%= cssPath %>';
 
 class <%= name %> extends React.Component {
   static propTypes = {
@@ -11,7 +12,7 @@ class <%= name %> extends React.Component {
 
   render() {
     let {className} = this.props;
-    let {cx} = classNames(<%= className %>, className);
+    let {cx} = classNames('<%= className %>', className);
 
     return (
       <div className={cx}>
