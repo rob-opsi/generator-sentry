@@ -25,7 +25,7 @@ yo sentry:component ComponentName --type es6
 
 ## License
 
-BSD-3-Clause © [Sentry]()
+BSD-3-Clause © [Sentry](http://sentry.io)
 
 
 [npm-image]: https://badge.fury.io/js/generator-sentry.svg

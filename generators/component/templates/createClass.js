@@ -16,7 +16,7 @@ const <%= name %> = React.createClass({
 
   render() {
     let {className} = this.props;
-    let {cx} = classNames('<%= className %>', className);
+    let cx = classNames('<%= className %>', className);
 
     return (
       <div className={cx}>
