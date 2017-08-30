@@ -1,6 +1,6 @@
 {
   "name": "generator-sentry",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Generate a sentry UI component",
   "homepage": "https://github.com/getsentry/generator-sentry",
   "author": {
