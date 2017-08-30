@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import <%= name %> from 'app/components/<%= fileName %>';
+import <%= name %> from 'app/components/<%= parentPath %><%= fileName %>';
 
 describe('<%= name %>', function() {
   beforeEach(function() {

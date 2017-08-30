@@ -124,6 +124,7 @@ module.exports = class extends Generator {
           {
             name,
             fileName,
+            parentPath,
             cssPath: `${cssPath}/${parentPath}${fileName}.less`,
             className
           }
