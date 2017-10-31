@@ -113,15 +113,13 @@ module.exports = class extends Generator {
       }
 
       this.log(
-        `Creating react component + stories + jest specs + less: ${chalk.green(
-          this.props.name
-        )}`
+        `Creating react component + stories + jest specs: ${chalk.green(this.props.name)}`
       );
 
       const {name, parentPath} = getComponentParts(this.props.name);
       const fileName = `${name[0].toLowerCase()}${name.slice(1)}`;
       const className = camelToHyphen(fileName);
-      const templates = ['spec', this.props.type || 'es6', 'storybook', 'less'];
+      const templates = ['spec', this.props.type || 'es6', 'storybook'];
 
       templates.forEach(template => {
         const dest = TPL[template];
