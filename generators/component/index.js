@@ -14,7 +14,7 @@ const getComponentParts = path => {
 
   return {
     name: parts[parts.length - 1],
-    parentPath: parentDirs.length > 0 ? `${parentDirs.join('/')}/` : ''
+    parentPath: parentDirs.length > 0 ? `${parentDirs.join('/')}/` : '',
   };
 };
 
@@ -33,20 +33,28 @@ const camelToHyphen = str =>
 const TPL = {
   spec: {
     path: 'tests/js/spec/components',
-    ext: '.spec.jsx'
+    ext: '.spec.jsx',
   },
   createClass: {
     path: 'src/sentry/static/sentry/app/components',
-    ext: '.jsx'
+    ext: '.jsx',
+  },
+  es6: {
+    path: 'src/sentry/static/sentry/app/components',
+    ext: '.jsx',
+  },
+  pure: {
+    path: 'src/sentry/static/sentry/app/components',
+    ext: '.jsx',
   },
   storybook: {
     path: 'docs-ui/components',
-    ext: '.stories.js'
+    ext: '.stories.js',
   },
   less: {
     path: 'src/sentry/static/sentry/less/components',
-    ext: '.less'
-  }
+    ext: '.less',
+  },
 };
 
 module.exports = class extends Generator {
@@ -54,12 +62,12 @@ module.exports = class extends Generator {
     super(args, opts);
     this.argument('name', {
       type: String,
-      required: false
+      required: false,
     });
     this.option('type', {
       type: String,
       desc: 'One of: "createClass", "es6", or "pure"',
-      default: 'createClass'
+      default: 'es6',
     });
   }
 
@@ -74,7 +82,7 @@ module.exports = class extends Generator {
       prompts.push({
         type: 'input',
         name: 'name',
-        message: 'Component name (in PascalCase)'
+        message: 'Component name (in PascalCase)',
       });
     }
 
@@ -82,7 +90,7 @@ module.exports = class extends Generator {
       prompts.push({
         type: 'input',
         name: 'type',
-        message: 'One of "createClass", "es6", or "pure"'
+        message: 'One of "createClass", "es6", or "pure"',
       });
     }
 
@@ -113,7 +121,7 @@ module.exports = class extends Generator {
       const {name, parentPath} = getComponentParts(this.props.name);
       const fileName = `${name[0].toLowerCase()}${name.slice(1)}`;
       const className = camelToHyphen(fileName);
-      const templates = ['spec', this.props.type || 'createClass', 'storybook', 'less'];
+      const templates = ['spec', this.props.type || 'es6', 'storybook', 'less'];
 
       templates.forEach(template => {
         const dest = TPL[template];
@@ -126,7 +134,7 @@ module.exports = class extends Generator {
             fileName,
             parentPath,
             cssPath: `${cssPath}/${parentPath}${fileName}.less`,
-            className
+            className,
           }
         );
       });
