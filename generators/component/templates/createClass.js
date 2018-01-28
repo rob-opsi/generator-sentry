@@ -1,9 +1,9 @@
+import createReactClass from 'create-react-class';
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import '<%= cssPath %>';
 
-const <%= name %> = React.createClass({
+const <%= name %> = createReactClass({
+  displayName: "<%= name %>",
   propTypes: {
   },
 
@@ -16,11 +16,8 @@ const <%= name %> = React.createClass({
   },
 
   render() {
-    let {className} = this.props;
-    let cx = classNames('<%= className %>', className);
-
     return (
-      <div className={cx}>
+      <div>
       </div>
     );
   }

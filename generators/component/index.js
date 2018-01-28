@@ -51,10 +51,6 @@ const TPL = {
     path: 'docs-ui/components',
     ext: '.stories.js',
   },
-  less: {
-    path: 'src/sentry/static/sentry/less/components',
-    ext: '.less',
-  },
 };
 
 module.exports = class extends Generator {
@@ -123,7 +119,6 @@ module.exports = class extends Generator {
 
       templates.forEach(template => {
         const dest = TPL[template];
-        let cssPath = path.relative(`${dest.path}/${parentPath}`, TPL.less.path);
         this.fs.copyTpl(
           this.templatePath(`${template}.js`),
           this.destinationPath(`${dest.path}/${parentPath}${fileName}${dest.ext}`),
@@ -131,7 +126,6 @@ module.exports = class extends Generator {
             name,
             fileName,
             parentPath,
-            cssPath: `${cssPath}/${parentPath}${fileName}.less`,
             className,
           }
         );
